@@ -1,0 +1,23 @@
+# ninja log v5
+4	101	1738898475182491638	CMakeFiles/Template_cmake.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c.obj	4a15c6c26eeafbff
+202	214	1738898475295491779	Template_cmake.elf	431c9b9ffdf90826
+4	64	1738898475145491592	CMakeFiles/Template_cmake.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c.obj	d9543c07132e8cdf
+4	84	1738898475165491616	CMakeFiles/Template_cmake.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c.obj	672fa33485af287c
+3	115	1738898475196491655	CMakeFiles/Template_cmake.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c.obj	a513cc7ae378902b
+8	23	1738898475104491541	CMakeFiles/Template_cmake.dir/startup_stm32f407xx.s.obj	f0f71e1a7e234eaf
+7	41	1738898475122491563	CMakeFiles/Template_cmake.dir/Core/Src/sysmem.c.obj	6f43fd8e98fa5005
+5	104	1738898475185491642	CMakeFiles/Template_cmake.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c.obj	dfc3e01f42ecc2b1
+2	57	1738898475135491579	CMakeFiles/Template_cmake.dir/Core/Src/stm32f4xx_hal_msp.c.obj	9820c6f12e982638
+3	52	1738898475132491575	CMakeFiles/Template_cmake.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c.obj	bf9ade2f69ef2b1e
+7	74	1738898475155491604	CMakeFiles/Template_cmake.dir/Core/Src/syscalls.c.obj	2c0d07d07c693959
+4	110	1738898475191491649	CMakeFiles/Template_cmake.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c.obj	818289c32fcd9d89
+3	202	1738898475283491764	CMakeFiles/Template_cmake.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c.obj	184d9b7d07f5b3ca
+3	146	1738898475227491694	CMakeFiles/Template_cmake.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c.obj	ec9e0d3896944f01
+2	62	1738898475141491587	CMakeFiles/Template_cmake.dir/Core/Src/stm32f4xx_it.c.obj	61e8b36a1be39af2
+5	72	1738898475153491602	CMakeFiles/Template_cmake.dir/Core/Src/system_stm32f4xx.c.obj	6c7aa025472bef88
+3	108	1738898475189491646	CMakeFiles/Template_cmake.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c.obj	824d154218a7d81a
+3	115	1738898475196491655	CMakeFiles/Template_cmake.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c.obj	c9069fa284370205
+3	90	1738898475171491624	CMakeFiles/Template_cmake.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c.obj	e28061bb6944cab1
+2	62	1738898475143491589	CMakeFiles/Template_cmake.dir/Core/Src/gpio.c.obj	d552cfee05390180
+2	136	1738898475217491681	CMakeFiles/Template_cmake.dir/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c.obj	c87cc764699230da
+1	71	1738898475152491601	CMakeFiles/Template_cmake.dir/Core/Src/main.c.obj	6a653bc80f19b9ac
