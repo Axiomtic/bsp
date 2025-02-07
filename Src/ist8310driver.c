@@ -4,8 +4,8 @@
   * @file       IST8310driver.c/h
   * @brief      ist8310 is a 3-axis digital magnetometer, the file includes initialization function,
   *             read magnetic field strength data function.
-  *             IST8310ÊÇÒ»¿îÈıÖáÊı×Ö´ÅÁ¦¼Æ£¬±¾ÎÄ¼ş°üÀ¨³õÊ¼»¯º¯Êı£¬¶ÁÈ¡´Å³¡Êı¾İº¯Êı¡£
-  * @note       IST8310 only support I2C. IST8310Ö»Ö§³ÖI2C¡£
+  *             IST8310æ˜¯ä¸€æ¬¾ä¸‰è½´æ•°å­—ç£åŠ›è®¡ï¼Œæœ¬æ–‡ä»¶åŒ…æ‹¬åˆå§‹åŒ–å‡½æ•°ï¼Œè¯»å–ç£åœºæ•°æ®å‡½æ•°ã€‚
+  * @note       IST8310 only support I2C. IST8310åªæ”¯æŒI2Cã€‚
   * @history
   *  Version    Date            Author          Modification
   *  V1.0.0     Dec-26-2018     RM              1. done
@@ -21,21 +21,21 @@
 #include "ist8310driver.h"
 #include "ist8310driver_middleware.h"
 
-#define MAG_SEN 0.3f //raw int16 data change to uT unit. Ô­Ê¼ÕûĞÍÊı¾İ±ä³É µ¥Î»ut
+#define MAG_SEN 0.3f //raw int16 data change to uT unit. åŸå§‹æ•´å‹æ•°æ®å˜æˆ å•ä½ut
 
 #define IST8310_WHO_AM_I 0x00       //ist8310 "who am I " 
 #define IST8310_WHO_AM_I_VALUE 0x10 //device ID
 
 #define IST8310_WRITE_REG_NUM 4 
 
-//the first column:the registers of IST8310. µÚÒ»ÁĞ:IST8310µÄ¼Ä´æÆ÷
-//the second column: the value to be writed to the registers.µÚ¶şÁĞ:ĞèÒªĞ´ÈëµÄ¼Ä´æÆ÷Öµ
-//the third column: return error value.µÚÈıÁĞ:·µ»ØµÄ´íÎóÂë
+//the first column:the registers of IST8310. ç¬¬ä¸€åˆ—:IST8310çš„å¯„å­˜å™¨
+//the second column: the value to be writed to the registers.ç¬¬äºŒåˆ—:éœ€è¦å†™å…¥çš„å¯„å­˜å™¨å€¼
+//the third column: return error value.ç¬¬ä¸‰åˆ—:è¿”å›çš„é”™è¯¯ç 
 static const uint8_t ist8310_write_reg_data_error[IST8310_WRITE_REG_NUM][3] ={
-        {0x0B, 0x08, 0x01},     //enalbe interrupt  and low pin polarity.¿ªÆôÖĞ¶Ï£¬²¢ÇÒÉèÖÃµÍµçÆ½
-        {0x41, 0x09, 0x02},     //average 2 times.Æ½¾ù²ÉÑùÁ½´Î
-        {0x42, 0xC0, 0x03},     //must be 0xC0. ±ØĞëÊÇ0xC0
-        {0x0A, 0x0B, 0x04}};    //200Hz output rate.200HzÊä³öÆµÂÊ
+        {0x0B, 0x08, 0x01},     //enalbe interrupt  and low pin polarity.å¼€å¯ä¸­æ–­ï¼Œå¹¶ä¸”è®¾ç½®ä½ç”µå¹³
+        {0x41, 0x09, 0x02},     //average 2 times.å¹³å‡é‡‡æ ·ä¸¤æ¬¡
+        {0x42, 0xC0, 0x03},     //must be 0xC0. å¿…é¡»æ˜¯0xC0
+        {0x0A, 0x0B, 0x04}};    //200Hz output rate.200Hzè¾“å‡ºé¢‘ç‡
 
 
 
@@ -45,7 +45,7 @@ static const uint8_t ist8310_write_reg_data_error[IST8310_WRITE_REG_NUM][3] ={
   * @retval         error value
   */
 /**
-  * @brief          ³õÊ¼»¯IST8310
+  * @brief          åˆå§‹åŒ–IST8310
   * @param[in]      none
   * @retval         error value
   */
@@ -92,9 +92,9 @@ uint8_t ist8310_init(void)
   * @retval         none
   */
 /**
-  * @brief          Èç¹ûÒÑ¾­Í¨¹ıI2CµÄDMA·½Ê½¶ÁÈ¡µ½ÁË´ÓSTAT1µ½DATAZLµÄÊı¾İ£¬¿ÉÒÔÊ¹ÓÃÕâ¸öº¯Êı½øĞĞ´¦Àí
-  * @param[in]      status_buf:Êı¾İÖ¸Õë,´ÓSTAT1(0x02) ¼Ä´æÆ÷µ½ DATAZL(0x08)¼Ä´æÆ÷ 
-  * @param[out]     ist8310_real_data:ist8310µÄÊı¾İ½á¹¹
+  * @brief          å¦‚æœå·²ç»é€šè¿‡I2Cçš„DMAæ–¹å¼è¯»å–åˆ°äº†ä»STAT1åˆ°DATAZLçš„æ•°æ®ï¼Œå¯ä»¥ä½¿ç”¨è¿™ä¸ªå‡½æ•°è¿›è¡Œå¤„ç†
+  * @param[in]      status_buf:æ•°æ®æŒ‡é’ˆ,ä»STAT1(0x02) å¯„å­˜å™¨åˆ° DATAZL(0x08)å¯„å­˜å™¨ 
+  * @param[out]     ist8310_real_data:ist8310çš„æ•°æ®ç»“æ„
   * @retval         none
   */
 void ist8310_read_over(uint8_t *status_buf, ist8310_real_data_t *ist8310_real_data)
@@ -124,8 +124,8 @@ void ist8310_read_over(uint8_t *status_buf, ist8310_real_data_t *ist8310_real_da
   * @retval         none
   */
 /**
-  * @brief          Í¨¹ı¶ÁÈ¡´Å³¡Êı¾İ
-  * @param[out]     ´Å³¡Êı×é
+  * @brief          é€šè¿‡è¯»å–ç£åœºæ•°æ®
+  * @param[out]     ç£åœºæ•°ç»„
   * @retval         none
   */
 void ist8310_read_mag(fp32 mag[3])

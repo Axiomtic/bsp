@@ -6,7 +6,7 @@
   * @note       IST8310 only support I2C
   * @history
   *  Version    Date            Author          Modification
-  *  V1.0.0     Dec-26-2018     RM              1. Íê³É
+  *  V1.0.0     Dec-26-2018     RM              1. å®Œæˆ
   *
   */
 
@@ -31,7 +31,7 @@ typedef struct ist8310_real_data_t
   * @retval         error value
   */
 /**
-  * @brief          ³õÊ¼»¯IST8310
+  * @brief          åˆå§‹åŒ–IST8310
   * @param[in]      none
   * @retval         error value
   */ 
@@ -44,9 +44,9 @@ extern uint8_t ist8310_init(void);
   * @retval         none
   */
 /**
-  * @brief          Èç¹ûÒÑ¾­Í¨¹ıI2CµÄDMA·½Ê½¶ÁÈ¡µ½ÁË´ÓSTAT1µ½DATAZLµÄÊı¾İ£¬¿ÉÒÔÊ¹ÓÃÕâ¸öº¯Êı½øĞĞ´¦Àí
-  * @param[in]      status_buf:Êı¾İÖ¸Õë,´ÓSTAT1(0x02) ¼Ä´æÆ÷µ½ DATAZL(0x08)¼Ä´æÆ÷ 
-  * @param[out]     ist8310_real_data:ist8310µÄÊı¾İ½á¹¹
+  * @brief          å¦‚æœå·²ç»é€šè¿‡I2Cçš„DMAæ–¹å¼è¯»å–åˆ°äº†ä»STAT1åˆ°DATAZLçš„æ•°æ®ï¼Œå¯ä»¥ä½¿ç”¨è¿™ä¸ªå‡½æ•°è¿›è¡Œå¤„ç†
+  * @param[in]      status_buf:æ•°æ®æŒ‡é’ˆ,ä»STAT1(0x02) å¯„å­˜å™¨åˆ° DATAZL(0x08)å¯„å­˜å™¨ 
+  * @param[out]     ist8310_real_data:ist8310çš„æ•°æ®ç»“æ„
   * @retval         none
   */
 extern void ist8310_read_over(uint8_t *status_buf, ist8310_real_data_t *ist8310_real_data);
@@ -57,8 +57,8 @@ extern void ist8310_read_over(uint8_t *status_buf, ist8310_real_data_t *ist8310_
   * @retval         none
   */
 /**
-  * @brief          Í¨¹ı¶ÁÈ¡´Å³¡Êı¾İ
-  * @param[out]     ´Å³¡Êı×é
+  * @brief          é€šè¿‡è¯»å–ç£åœºæ•°æ®
+  * @param[out]     ç£åœºæ•°ç»„
   * @retval         none
   */
 extern void ist8310_read_mag(fp32 mag[3]);

@@ -2,8 +2,8 @@
   ****************************(C) COPYRIGHT 2019 DJI****************************
   * @file       IST8310driver_middleware.c/h
   * @brief      the file provide I2C write/read function, as the middleware of IST8310.
-  *             ±¾ÎÄ¼şÖ÷ÒªÌá¹©I2C ¶ÁĞ´º¯Êı£¬×÷ÎªIST8310Çı¶¯µÄÖĞ¼ä¼ş
-  * @note       IST8310 only support I2C. IST8310Ö»Ö§³ÖI2C¡£
+  *             æœ¬æ–‡ä»¶ä¸»è¦æä¾›I2C è¯»å†™å‡½æ•°ï¼Œä½œä¸ºIST8310é©±åŠ¨çš„ä¸­é—´ä»¶
+  * @note       IST8310 only support I2C. IST8310åªæ”¯æŒI2Cã€‚
   * @history
   *  Version    Date            Author          Modification
   *  V1.0.0     Dec-26-2018     RM              1. done
@@ -29,7 +29,7 @@
   * @retval         none
   */
 /**
-  * @brief          ³õÊ¼»¯IST8310µÄGPIO
+  * @brief          åˆå§‹åŒ–IST8310çš„GPIO
   * @param[in]      none
   * @retval         none
   */
@@ -41,7 +41,7 @@ extern void ist8310_GPIO_init(void);
   * @retval         none
   */
 /**
-  * @brief          ³õÊ¼»¯IST8310µÄÍ¨ĞÅ½Ó¿Ú
+  * @brief          åˆå§‹åŒ–IST8310çš„é€šä¿¡æ¥å£
   * @param[in]      none
   * @retval         none
   */
@@ -54,9 +54,9 @@ extern void ist8310_com_init(void);
   * @retval         value of the register
   */
 /**
-  * @brief          ¶ÁÈ¡IST8310µÄÒ»¸ö×Ö½ÚÍ¨¹ıI2C
-  * @param[in]      ¼Ä´æÆ÷µØÖ·
-  * @retval         ¼Ä´æÆ÷Öµ
+  * @brief          è¯»å–IST8310çš„ä¸€ä¸ªå­—èŠ‚é€šè¿‡I2C
+  * @param[in]      å¯„å­˜å™¨åœ°å€
+  * @retval         å¯„å­˜å™¨å€¼
   */
 extern uint8_t ist8310_IIC_read_single_reg(uint8_t reg);
 
@@ -67,9 +67,9 @@ extern uint8_t ist8310_IIC_read_single_reg(uint8_t reg);
   * @retval         value of the register
   */
 /**
-  * @brief          Í¨¹ıI2CĞ´ÈëÒ»¸ö×Ö½Úµ½IST8310µÄ¼Ä´æÆ÷ÖĞ
-  * @param[in]      ¼Ä´æÆ÷µØÖ·
-  * @param[in]      Ğ´ÈëÖµ
+  * @brief          é€šè¿‡I2Cå†™å…¥ä¸€ä¸ªå­—èŠ‚åˆ°IST8310çš„å¯„å­˜å™¨ä¸­
+  * @param[in]      å¯„å­˜å™¨åœ°å€
+  * @param[in]      å†™å…¥å€¼
   * @retval         none
   */
 extern void ist8310_IIC_write_single_reg(uint8_t reg, uint8_t data);
@@ -82,10 +82,10 @@ extern void ist8310_IIC_write_single_reg(uint8_t reg, uint8_t data);
   * @retval         none
   */
 /**
-  * @brief          ¶ÁÈ¡IST8310µÄ¶à¸ö×Ö½ÚÍ¨¹ıI2C
-  * @param[in]      ¼Ä´æÆ÷¿ªÊ¼µØÖ·
-  * @param[out]     ´æÈ¡»º³åÇø
-  * @param[in]      ¶ÁÈ¡×Ö½Ú×ÜÊı
+  * @brief          è¯»å–IST8310çš„å¤šä¸ªå­—èŠ‚é€šè¿‡I2C
+  * @param[in]      å¯„å­˜å™¨å¼€å§‹åœ°å€
+  * @param[out]     å­˜å–ç¼“å†²åŒº
+  * @param[in]      è¯»å–å­—èŠ‚æ€»æ•°
   * @retval         none
   */
 extern void ist8310_IIC_read_muli_reg(uint8_t reg, uint8_t *buf, uint8_t len);
@@ -98,10 +98,10 @@ extern void ist8310_IIC_read_muli_reg(uint8_t reg, uint8_t *buf, uint8_t len);
   * @retval         none
   */
 /**
-  * @brief          Ğ´Èë¶à¸ö×Ö½Úµ½IST8310µÄ¼Ä´æÆ÷Í¨¹ıI2C
-  * @param[in]      ¼Ä´æÆ÷¿ªÊ¼µØÖ·
-  * @param[out]     ´æÈ¡»º³åÇø
-  * @param[in]      ¶ÁÈ¡×Ö½Ú×ÜÊı
+  * @brief          å†™å…¥å¤šä¸ªå­—èŠ‚åˆ°IST8310çš„å¯„å­˜å™¨é€šè¿‡I2C
+  * @param[in]      å¯„å­˜å™¨å¼€å§‹åœ°å€
+  * @param[out]     å­˜å–ç¼“å†²åŒº
+  * @param[in]      è¯»å–å­—èŠ‚æ€»æ•°
   * @retval         none
   */
 extern void ist8310_IIC_write_muli_reg(uint8_t reg, uint8_t *data, uint8_t len);
@@ -112,8 +112,8 @@ extern void ist8310_IIC_write_muli_reg(uint8_t reg, uint8_t *data, uint8_t len);
   * @retval         none
   */
 /**
-  * @brief          ÑÓÊ±xºÁÃë
-  * @param[in]      ms: msºÁÃë
+  * @brief          å»¶æ—¶xæ¯«ç§’
+  * @param[in]      ms: msæ¯«ç§’
   * @retval         none
   */
 extern void ist8310_delay_ms(uint16_t ms);
@@ -123,8 +123,8 @@ extern void ist8310_delay_ms(uint16_t ms);
   * @retval         none
   */
 /**
-  * @brief          ÑÓÊ±xÎ¢Ãë
-  * @param[in]      us: usÎ¢Ãë
+  * @brief          å»¶æ—¶xå¾®ç§’
+  * @param[in]      us: uså¾®ç§’
   * @retval         none
   */
 extern void ist8310_delay_us(uint16_t us);
@@ -134,7 +134,7 @@ extern void ist8310_delay_us(uint16_t us);
   * @retval         none
   */
 /**
-  * @brief          ÉèÖÃRSTNÒı½ÅÎª1
+  * @brief          è®¾ç½®RSTNå¼•è„šä¸º1
   * @param[in]      none
   * @retval         none
   */
@@ -145,7 +145,7 @@ extern void ist8310_RST_H(void);
   * @retval         none
   */
 /**
-  * @brief          ÉèÖÃRSTNÒı½ÅÎª0
+  * @brief          è®¾ç½®RSTNå¼•è„šä¸º0
   * @param[in]      none
   * @retval         none
   */
