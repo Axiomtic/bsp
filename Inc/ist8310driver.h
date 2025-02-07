@@ -13,7 +13,7 @@
 #ifndef IST8310DRIVER_H
 #define IST8310DRIVER_H
 #include "struct_typedef.h"
-
+#include "stm32f4xx_hal.h"
 #define IST8310_DATA_READY_BIT 2
 
 #define IST8310_NO_ERROR 0x00

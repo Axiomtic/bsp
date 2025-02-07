@@ -1,6 +1,6 @@
 #ifndef BSP_FLASH_H
 #define BSP_FLASH_H
-#include "struct_typedef.h"
+#include "stm32f4xx.h"
 
 /* Base address of the Flash sectors */
 #define ADDR_FLASH_SECTOR_0 ((uint32_t)0x08000000)  /* Base address of Sector 0, 16 Kbytes   */
@@ -109,7 +109,7 @@ extern void flash_read(uint32_t address, uint32_t *buf, uint32_t len);
   * @param[in]      address: flash 地址
   * @retval         sector号
   */
-extern uint32_t ger_sector(uint32_t address);
+//extern uint32_t get_sector(uint32_t address);
 /**
   * @brief          get the next page flash address
   * @param[in]      address: flash address

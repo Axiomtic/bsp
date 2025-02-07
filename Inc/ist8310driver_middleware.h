@@ -19,6 +19,7 @@
 #define IST8310DRIVER_MIDDLEWARE_H
 
 #include "struct_typedef.h"
+#include "main.h"
 
 #define IST8310_IIC_ADDRESS 0x0E  //the I2C address of IST8310
 

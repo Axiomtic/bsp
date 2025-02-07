@@ -1,6 +1,7 @@
 #ifndef BSP_FRIC_H
 #define BSP_FRIC_H
 #include "struct_typedef.h"
+#include "stm32f4xx_hal.h"
 
 #define FRIC_UP 1400
 #define FRIC_DOWN 1320

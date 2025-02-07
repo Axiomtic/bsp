@@ -12,7 +12,7 @@
   * @param[in]      address: flash 地址
   * @retval         sector号
   */
-static uint32_t ger_sector(uint32_t address);
+static uint32_t get_sector(uint32_t address);
 
 /**
   * @brief          erase flash
@@ -31,7 +31,7 @@ void flash_erase_address(uint32_t address, uint16_t len)
     FLASH_EraseInitTypeDef flash_erase;
     uint32_t error;
 
-    flash_erase.Sector = ger_sector(address);
+    flash_erase.Sector = get_sector(address);
     flash_erase.TypeErase = FLASH_TYPEERASE_SECTORS;
     flash_erase.VoltageRange = FLASH_VOLTAGE_RANGE_3;
     flash_erase.NbSectors = len;
@@ -173,7 +173,7 @@ void flash_read(uint32_t address, uint32_t *buf, uint32_t len)
   * @param[in]      address: flash 地址
   * @retval         sector号
   */
-uint32_t ger_sector(uint32_t address)
+static uint32_t get_sector(uint32_t address)
 {
     uint32_t sector = 0;
     if ((address < ADDR_FLASH_SECTOR_1) && (address >= ADDR_FLASH_SECTOR_0))

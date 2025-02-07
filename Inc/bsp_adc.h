@@ -1,7 +1,7 @@
 #ifndef BSP_ADC_H
 #define BSP_ADC_H
 #include "struct_typedef.h"
-
+#include "stm32f4xx_hal.h"
 extern void init_vrefint_reciprocal(void);
 extern fp32 get_temprate(void);
 extern fp32 get_battery_voltage(void);

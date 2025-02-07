@@ -1,7 +1,7 @@
 #ifndef BSP_LED_H
 #define BSP_LED_H
 #include "struct_typedef.h"
-
+#include "stm32f4xx_hal.h"
 /**
   * @brief          aRGB show
   * @param[in]      aRGB: 0xaaRRGGBB, 'aa' is alpha, 'RR' is red, 'GG' is green, 'BB' is blue
